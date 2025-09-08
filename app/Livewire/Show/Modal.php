@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Show;
 
+use Livewire\Attributes\On;
 use Livewire\Component;
 use App\Models\Company;
 use App\Models\Client;
@@ -12,8 +13,7 @@ class Modal extends Component
     public $type = null; // 'company' or 'client'
     public $data = null;
 
-    protected $listeners = ['open'];
-
+    #[On('open')]
     public function open($type, $id)
     {
         $this->type = $type;

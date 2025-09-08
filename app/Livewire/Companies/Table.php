@@ -24,7 +24,7 @@ class Table extends Component
     public function showDetails($companyId)
     {
         $company = Company::with('clients')->findOrFail($companyId);
-        $this->emitTo('show.modal', 'open', 'company', $companyId);
+        $this->dispatch('open', 'company', $companyId)->to('show.modal');
     }
 
     public function render()

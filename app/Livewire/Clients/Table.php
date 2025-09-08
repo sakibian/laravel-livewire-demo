@@ -21,7 +21,7 @@ class Table extends Component
 
     public function showDetails($clientId)
     {
-        $this->emitTo('show.modal', 'open', 'client', $clientId);
+        $this->dispatch('open', 'client', $clientId)->to('show.modal');
     }
 
     public function render()
